@@ -1,0 +1,16 @@
+{% extends 'frame.html' %}
+{% block content %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name() }}
+        {{ form.class_usage.label }}{{ form.class_usage() }}
+        {{ form.submit() }}
+        <br>
+        {% for message in get_flashed_messages() %}
+        {{ message }}
+        {% endfor %}
+
+    </form>
+
+{% endblock %}

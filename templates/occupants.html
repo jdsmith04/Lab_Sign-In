@@ -1,0 +1,12 @@
+{% extends 'frame.html' %}
+{% block content %}
+    <p>Lists student who are currently using the lab</p>
+    <p>Info pulled from database</p>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    {% if number_of_students %}
+        {{ table }}
+    {% endif %}
+
+{% endblock %}
